@@ -71,7 +71,7 @@ body{
 }
 .playWithComputer{
   color: #40514e;
-  height: 15px;
+  height: 30px;
   width: 150px;
   background-color: grey;
   border-radius: 4%;
@@ -102,6 +102,8 @@ body{
   border-collapse: collapse;
   border-spacing: 0 0;
   margin: 0;
+  box-sizing: border-box;
+  vertical-align: text-top;
 }
 
 .restartbtn{
