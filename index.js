@@ -97,7 +97,7 @@ var btnArray= document.querySelectorAll(".btn");
     y = Math.random() * 9;
     y = Math.floor(y) + 1;
     $(this).text(xx);
-    userIndex= btnArray.findIndex();
+    computerAnswers.push(y);
 
     $(this).off("click");
     for (var i = 0; i < computerAnswers.length; i++) {
@@ -106,8 +106,8 @@ var btnArray= document.querySelectorAll(".btn");
         y = Math.floor(y) + 1;
       }
     }
-    computerAnswers.push(y);
-    computerAnswers.push(userIndex +1);
+   
+    
 
     computerChance();
     if (document.querySelector(".btn1").innerHTML == "X" && document.querySelector(".btn2").innerHTML == "X" && document.querySelector(".btn3").innerHTML == "X" || document.querySelector(".btn4").innerHTML == "X" && document.querySelector(".btn5").innerHTML == "X" && document.querySelector(".btn6").innerHTML == "X" || document.querySelector(".btn7").innerHTML == "X" && document.querySelector(".btn8").innerHTML == "X" && document.querySelector(".btn9").innerHTML == "X" || document.querySelector(".btn1").innerHTML == "X" && document.querySelector(".btn4").innerHTML == "X" && document.querySelector(".btn7").innerHTML == "X" || document.querySelector(".btn2").innerHTML == "X" && document.querySelector(".btn5").innerHTML == "X" && document.querySelector(".btn8").innerHTML == "X" || document.querySelector(".btn3").innerHTML == "X" && document.querySelector(".btn6").innerHTML == "X" && document.querySelector(".btn9").innerHTML == "X" || document.querySelector(".btn1").innerHTML == "X" && document.querySelector(".btn5").innerHTML == "X" && document.querySelector(".btn9").innerHTML == "X" || document.querySelector(".btn3").innerHTML == "X" && document.querySelector(".btn5").innerHTML == "X" && document.querySelector(".btn7").innerHTML == "X") {
