@@ -49,6 +49,13 @@ body{
   right: 400px;
   background-color: #ffffff;
 }
+.xo{
+    position: absolute;
+    top: 80px;
+    left: 580px;
+    color:  #14bdac ;
+    font-size: 22px;
+}
 .tictactoe{
   position: relative;
   top: 70px;
