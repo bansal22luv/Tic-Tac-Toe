@@ -93,27 +93,36 @@ $(".playWithComputer").on("click", function() {
   });
   var userIndex;
 var btnArray= document.querySelectorAll(".btn");
-  $(".btn").on("click", function() {
+  $(".btn").on("click", function(event) {
+    let index=0;
+    for(let i=0;i<btnArray.length;i++){
+      if(btnArray[i].name==event.target.name){
+        index=i;
+        break;
+      }
+    }
+    console.log(index);
+    let clickedBtn=btnArray[event.target];
+    console.log(clickedBtn);
     y = Math.random() * 9;
     y = Math.floor(y) + 1;
     $(this).text(xx);
     computerAnswers.push(y);
-
+    computerAnswers.push(index+1);
     $(this).off("click");
-    for (var i = 0; i < computerAnswers.length; i++) {
-      if (y==computerAnswers[i]) {
+
+      while (computerAnswers.includes(y)) {
         y = Math.random() * 9;
         y = Math.floor(y) + 1;
       }
-    }
    
     
 
     computerChance();
-    if (document.querySelector(".btn1").innerHTML == "X" && document.querySelector(".btn2").innerHTML == "X" && document.querySelector(".btn3").innerHTML == "X" || document.querySelector(".btn4").innerHTML == "X" && document.querySelector(".btn5").innerHTML == "X" && document.querySelector(".btn6").innerHTML == "X" || document.querySelector(".btn7").innerHTML == "X" && document.querySelector(".btn8").innerHTML == "X" && document.querySelector(".btn9").innerHTML == "X" || document.querySelector(".btn1").innerHTML == "X" && document.querySelector(".btn4").innerHTML == "X" && document.querySelector(".btn7").innerHTML == "X" || document.querySelector(".btn2").innerHTML == "X" && document.querySelector(".btn5").innerHTML == "X" && document.querySelector(".btn8").innerHTML == "X" || document.querySelector(".btn3").innerHTML == "X" && document.querySelector(".btn6").innerHTML == "X" && document.querySelector(".btn9").innerHTML == "X" || document.querySelector(".btn1").innerHTML == "X" && document.querySelector(".btn5").innerHTML == "X" && document.querySelector(".btn9").innerHTML == "X" || document.querySelector(".btn3").innerHTML == "X" && document.querySelector(".btn5").innerHTML == "X" && document.querySelector(".btn7").innerHTML == "X") {
+   if (document.querySelector(".btn1").innerHTML == xx && document.querySelector(".btn2").innerHTML == xx && document.querySelector(".btn3").innerHTML == xx || document.querySelector(".btn4").innerHTML == xx && document.querySelector(".btn5").innerHTML == xx && document.querySelector(".btn6").innerHTML == xx || document.querySelector(".btn7").innerHTML == xx && document.querySelector(".btn8").innerHTML == xx && document.querySelector(".btn9").innerHTML == xx || document.querySelector(".btn1").innerHTML == xx && document.querySelector(".btn4").innerHTML == xx && document.querySelector(".btn7").innerHTML == xx || document.querySelector(".btn2").innerHTML == xx && document.querySelector(".btn5").innerHTML == xx && document.querySelector(".btn8").innerHTML == xx || document.querySelector(".btn3").innerHTML == xx && document.querySelector(".btn6").innerHTML == xx && document.querySelector(".btn9").innerHTML == xx || document.querySelector(".btn1").innerHTML == xx && document.querySelector(".btn5").innerHTML == xx && document.querySelector(".btn9").innerHTML == xx || document.querySelector(".btn3").innerHTML == xx && document.querySelector(".btn5").innerHTML == xx && document.querySelector(".btn7").innerHTML == xx) {
       alert("user Win");
       $(".btn").off("click");
-    } else if (document.querySelector(".btn1").innerHTML == "O" && document.querySelector(".btn2").innerHTML == "O" && document.querySelector(".btn3").innerHTML == "O" || document.querySelector(".btn4").innerHTML == "O" && document.querySelector(".btn5").innerHTML == "O" && document.querySelector(".btn6").innerHTML == "O" || document.querySelector(".btn7").innerHTML == "O" && document.querySelector(".btn8").innerHTML == "O" && document.querySelector(".btn9").innerHTML == "O" || document.querySelector(".btn1").innerHTML == "O" && document.querySelector(".btn4").innerHTML == "O" && document.querySelector(".btn7").innerHTML == "O" || document.querySelector(".btn2").innerHTML == "O" && document.querySelector(".btn5").innerHTML == "O" && document.querySelector(".btn8").innerHTML == "O" || document.querySelector(".btn3").innerHTML == "O" && document.querySelector(".btn6").innerHTML == "O" && document.querySelector(".btn9").innerHTML == "O" || document.querySelector(".btn1").innerHTML == "O" && document.querySelector(".btn5").innerHTML == "O" && document.querySelector(".btn9").innerHTML == "O" || document.querySelector(".btn3").innerHTML == "O" && document.querySelector(".btn5").innerHTML == "O" && document.querySelector(".btn7").innerHTML == "O") {
+    } else if (document.querySelector(".btn1").innerHTML == oo && document.querySelector(".btn2").innerHTML == oo && document.querySelector(".btn3").innerHTML == oo || document.querySelector(".btn4").innerHTML == oo && document.querySelector(".btn5").innerHTML == oo && document.querySelector(".btn6").innerHTML == oo || document.querySelector(".btn7").innerHTML == oo && document.querySelector(".btn8").innerHTML == oo && document.querySelector(".btn9").innerHTML == oo || document.querySelector(".btn1").innerHTML == oo && document.querySelector(".btn4").innerHTML == "O" && document.querySelector(".btn7").innerHTML == oo || document.querySelector(".btn2").innerHTML == oo && document.querySelector(".btn5").innerHTML == oo && document.querySelector(".btn8").innerHTML == oo || document.querySelector(".btn3").innerHTML == oo && document.querySelector(".btn6").innerHTML == oo && document.querySelector(".btn9").innerHTML == oo || document.querySelector(".btn1").innerHTML == oo && document.querySelector(".btn5").innerHTML == "O" && document.querySelector(".btn9").innerHTML == oo || document.querySelector(".btn3").innerHTML == oo && document.querySelector(".btn5").innerHTML == oo && document.querySelector(".btn7").innerHTML == oo) {
       alert("computer Win");
       $(".btn").off("click");
 
